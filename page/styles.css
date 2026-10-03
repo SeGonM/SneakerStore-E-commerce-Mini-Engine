@@ -1,0 +1,333 @@
+:root {
+  color-scheme: dark;
+  --color-ink: #08070d;
+  --color-night: #100d1b;
+  --color-panel: #171326;
+  --color-violet: #8e6bff;
+  --color-lilac: #d9cbff;
+  --color-muted: #aaa4ba;
+  --color-cream: #f7f4ef;
+  --color-amber: #e6a45d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 760px;
+  overflow: hidden;
+  background: var(--color-night);
+}
+
+.hero__backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 13, 0.96) 0%, rgba(8, 7, 13, 0.72) 42%, rgba(8, 7, 13, 0.08) 100%),
+    linear-gradient(0deg, rgba(8, 7, 13, 0.98) 0%, rgba(8, 7, 13, 0.08) 52%, rgba(8, 7, 13, 0.42) 100%),
+    url("images/pictures/background-hero.jpg") center 42% / cover no-repeat;
+}
+
+.hero__content {
+  position: relative;
+  display: flex;
+  width: min(1200px, calc(100% - 112px));
+  min-height: 760px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.navigation-menu {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(217, 203, 255, 0.16);
+}
+
+.navigation-menu__home {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.navigation-menu__home span {
+  color: var(--color-lilac);
+}
+
+.navigation-menu__links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.navigation-menu__links a {
+  color: rgba(247, 244, 239, 0.8);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.navigation-menu__links a:hover,
+.navigation-menu__links a:focus-visible {
+  color: var(--color-lilac);
+}
+
+.hero-text {
+  max-width: 610px;
+  margin: auto 0;
+  padding: 76px 0 66px;
+}
+
+.hero-text__eyebrow,
+.featured-brands__eyebrow {
+  margin: 0 0 18px;
+  color: var(--color-lilac);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.hero-text h1 {
+  max-width: 590px;
+  margin: 0;
+  font-size: 64px;
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.description-header {
+  max-width: 455px;
+  margin: 22px 0 30px;
+  color: rgba(247, 244, 239, 0.76);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero__button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  gap: 24px;
+  padding: 0 21px;
+  border: 1px solid rgba(217, 203, 255, 0.58);
+  border-radius: 3px;
+  background: rgba(142, 107, 255, 0.16);
+  color: var(--color-cream);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.hero__button:hover,
+.hero__button:focus-visible {
+  border-color: var(--color-lilac);
+  background: rgba(142, 107, 255, 0.32);
+}
+
+.hero__button span {
+  color: var(--color-lilac);
+  font-size: 19px;
+}
+
+.featured-brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 44px;
+  padding: 25px 0 30px;
+  border-top: 1px solid rgba(217, 203, 255, 0.16);
+}
+
+.featured-brands__intro {
+  flex: 0 0 auto;
+}
+
+.featured-brands__eyebrow {
+  margin-bottom: 7px;
+  color: var(--color-amber);
+  font-size: 9px;
+}
+
+.featured-brands h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.row-logo-header {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.logo-header {
+  display: flex;
+  width: 176px;
+  height: 76px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 4px;
+  background: var(--color-cream);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.logo-header:hover,
+.logo-header:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(142, 107, 255, 0.25);
+}
+
+.logo-header img {
+  display: block;
+  width: 100%;
+  max-height: 44px;
+  object-fit: contain;
+}
+
+main {
+  min-height: 240px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(50, 38, 79, 0.4), transparent 58%),
+    var(--color-ink);
+}
+
+footer {
+  border-top: 1px solid rgba(217, 203, 255, 0.12);
+  background: var(--color-night);
+}
+
+.site-footer {
+  padding: 58px max(56px, calc((100% - 1200px) / 2)) 22px;
+}
+
+.site-footer__content {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 1fr;
+  gap: 64px;
+  padding-bottom: 46px;
+}
+
+.site-footer__brand,
+.site-footer__nav,
+.site-footer__note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__logo {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.site-footer__logo span {
+  color: var(--color-lilac);
+}
+
+.site-footer__brand p,
+.site-footer__note p {
+  max-width: 310px;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.site-footer__nav h2,
+.site-footer__note h2 {
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-footer__nav a {
+  margin-bottom: 11px;
+  color: var(--color-muted);
+  font-size: 13px;
+  transition: color 160ms ease;
+}
+
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible,
+.site-footer__bottom a:hover,
+.site-footer__bottom a:focus-visible {
+  color: var(--color-lilac);
+}
+
+.site-footer__note > a {
+  margin-top: 17px;
+  color: var(--color-lilac);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-footer__note > a span {
+  margin-left: 7px;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(217, 203, 255, 0.12);
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.site-footer__bottom a {
+  transition: color 160ms ease;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 42px 24px 20px;
+  }
+
+  .site-footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px 24px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-footer__bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
